@@ -2,7 +2,7 @@
 CC = gcc
 
 # compiler flags:
-CFLAGS  = 
+CFLAGS  = -g 
 
 # the build target executable:
 TARGET = pipeline 

@@ -29,6 +29,11 @@ enum stage_name{
 	s_WB
 };
 
+enum branch_taking {
+	b_nottaken = 0,
+	b_taken
+};
+
 int main(int argc, char **argv)
 {
   struct trace_item *tr_entry;
@@ -85,10 +90,14 @@ int main(int argc, char **argv)
   int insertion_point = 0;
   int pipeline_array_count = 0;
   int PC9to4 = 0;
-  
+ 
+  // Branching variables
+  int fetched_pc9to4; 
+  int evaluated_pc9to4;
+  int *prediction = (int *)malloc(PIPELINE_SIZE * sizeof(int));
   int *prediction_correct = (int *)malloc(PIPELINE_SIZE * sizeof(int));
   int *btb_PC = (int *)malloc(BTB_SIZE * (sizeof(int)));
-  int *btb_check = (int *)malloc(BTB_SIZE * (sizeof(int)));
+  int *btb_taken = (int *)malloc(BTB_SIZE * (sizeof(int)));
   
   while(1) {
 	if(squashed){
@@ -107,8 +116,12 @@ int main(int argc, char **argv)
 		pipeline_array[i]->dReg = pipeline_array[i-1]->dReg;
 		pipeline_array[i]->PC = pipeline_array[i-1]->PC;
 		pipeline_array[i]->Addr = pipeline_array[i-1]->Addr;
-		// shift prediction result as well
-		if (i <= s_EX2 && i > s_IF2) { prediction_correct[i] = prediction_correct[i-1]; }
+		// shift predictions and result as well
+		if (i <= s_EX2) { 
+			prediction[i] = prediction[i-1];
+			prediction_correct[i] = prediction_correct[i-1];
+	   	}
+
 	}	
 	if(squashed){
 		pipeline_array[insertion_point]->type = ti_SQUASHED;
@@ -271,7 +284,7 @@ int main(int argc, char **argv)
 		|| (pipeline_array[s_MEM1]->type == ti_LOAD 
 			&& (pipeline_array[s_MEM1]->dReg == pipeline_array[s_ID]->sReg_a 
 				|| pipeline_array[s_MEM1]->dReg == pipeline_array[s_ID]->sReg_b))){
-		stalled = s_EX1;
+		stalled = s_ID + 1;
 	}
 	
 	//////////////////////////////////////
@@ -281,6 +294,7 @@ int main(int argc, char **argv)
 		case 0:
 			// Check if the instruction fetched after the branch is at the branch target. If so, you were wrong.
 			if (pipeline_array[s_IF2]->type == ti_BRANCH) {
+				prediction[s_IF1] = b_nottaken;
 				if (pipeline_array[s_IF1]->PC == pipeline_array[s_IF2]->Addr) {
 					prediction_correct[s_IF2] = 0;
 				} else {
@@ -292,13 +306,42 @@ int main(int argc, char **argv)
 				squashed = s_EX1 + 1;
 			}
 			break;
-		//case 1:
-		//	PC9to4 = (pipeline_array[s_IF1]->PC >> 4) | 0x3F;
-			//if(pipeline_array[s_IF1]->type == ti_BRANCH 
-		//		&& btb_PC[PC9to4] == pipeline_array[s_IF1]->PC
-		//		&& btb_taken[addr9to4] == 1){
-		//			take_branch = 1;
-		//		}
+		case 1:
+			// Check if branch instruction that entered pipeline is in table 
+			fetched_pc9to4 = (pipeline_array[s_IF1]->PC >> 4) & 0x3F;
+			if (pipeline_array[s_IF1]->type == ti_BRANCH && btb_PC[fetched_pc9to4] == pipeline_array[s_IF1]->PC) {
+				prediction[s_IF1] = btb_taken[fetched_pc9to4];
+			} else {
+				// default to predicting not taken
+				prediction[s_IF1] = b_nottaken;
+			}
+
+			// Keep track of whether prediction was correct
+			if (pipeline_array[s_IF2]->type == ti_BRANCH) {
+				if (pipeline_array[s_IF1]->PC == pipeline_array[s_IF2]->Addr) {
+					// branch was taken
+					prediction_correct[s_IF2] = (prediction[s_IF2] == b_taken) ? 1 : 0;
+				} else {
+					// branch was not taken
+					prediction_correct[s_IF2] = (prediction[s_IF2] == b_nottaken) ? 1 : 0;
+				}
+			}
+
+			// Evaluate branch at EX2
+			evaluated_pc9to4 = (pipeline_array[s_EX2]->PC >> 4) & 0x3F;
+			if (pipeline_array[s_EX2]->type == ti_BRANCH) {
+				// fill new instruction in btb buffer, overwriting if necessary
+				btb_PC[evaluated_pc9to4] = pipeline_array[s_EX2]->PC;
+				if (prediction_correct[s_EX2]) {
+				   // prediction was correct 
+					btb_taken[evaluated_pc9to4] = prediction[s_EX2];
+			   	} else {
+					btb_taken[evaluated_pc9to4] = !prediction[s_EX2];
+					// add some squanch
+					squashed = s_EX1 + 1;
+				}
+			}	   
+			break;
 	}
 	
   }
