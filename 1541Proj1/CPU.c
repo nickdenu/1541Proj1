@@ -15,7 +15,9 @@
 #define PIPELINE_SIZE 8
 #define REG_UNUSED 255
 #define ADDR_UNUSED 0xFFFFFFFF
-#define BTB_SIZE 64
+#define BTB_SIZE 64 
+#define MASK_OFFSET 4
+#define MASK 0x3F
 
 // uncomment for verbose output
 // #define DEBUG
@@ -314,7 +316,7 @@ int main(int argc, char **argv)
 		// 1-bit branch prediction
 		case 1:
 			// Check if branch instruction that entered pipeline is in table 
-			fetched_pc9to4 = (pipeline_array[s_IF1]->PC >> 4) & 0x3F;
+			fetched_pc9to4 = (pipeline_array[s_IF1]->PC >> MASK_OFFSET) & MASK;
 			if (pipeline_array[s_IF1]->type == ti_BRANCH && btb_PC[fetched_pc9to4] == pipeline_array[s_IF1]->PC) {
 				prediction[s_IF1] = btb_taken[fetched_pc9to4];
 			} else {
@@ -334,7 +336,7 @@ int main(int argc, char **argv)
 			}
 
 			// Evaluate branch at EX2
-			evaluated_pc9to4 = (pipeline_array[s_EX2]->PC >> 4) & 0x3F;
+			evaluated_pc9to4 = (pipeline_array[s_EX2]->PC >> MASK_OFFSET) & MASK;
 			if (pipeline_array[s_EX2]->type == ti_BRANCH) {
 				// fill new instruction in btb buffer, overwriting if necessary
 				btb_PC[evaluated_pc9to4] = pipeline_array[s_EX2]->PC;
@@ -352,7 +354,7 @@ int main(int argc, char **argv)
 		// 2-bit branch prediction
 		case 2:
 			// Check if branch instruction that entered pipeline is in table 
-			fetched_pc9to4 = (pipeline_array[s_IF1]->PC >> 4) & 0x3F;
+			fetched_pc9to4 = (pipeline_array[s_IF1]->PC >> MASK_OFFSET) & MASK;
 			if (pipeline_array[s_IF1]->type == ti_BRANCH && btb_PC[fetched_pc9to4] == pipeline_array[s_IF1]->PC) {
 				// copy last taken behavior
 				prediction[s_IF1] = btb_taken[fetched_pc9to4];
@@ -373,7 +375,7 @@ int main(int argc, char **argv)
 			}
 
 			// Evaluate branch at EX2
-			evaluated_pc9to4 = (pipeline_array[s_EX2]->PC >> 4) & 0x3F;
+			evaluated_pc9to4 = (pipeline_array[s_EX2]->PC >> MASK_OFFSET) & MASK;
 			if (pipeline_array[s_EX2]->type == ti_BRANCH) {
 				// different behavior depending on if instruction was already in buffer
 				if (btb_PC[evaluated_pc9to4] != pipeline_array[s_EX2]->PC) {
