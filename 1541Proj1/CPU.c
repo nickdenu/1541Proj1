@@ -17,6 +17,9 @@
 #define ADDR_UNUSED 0xFFFFFFFF
 #define BTB_SIZE 64
 
+// uncomment for verbose output
+// #define DEBUG
+
 
 enum stage_name{
 	s_IF1 = 0,
@@ -166,8 +169,7 @@ int main(int argc, char **argv)
 		cycle_number++;
 	}
 
-// SIMULATION OF A SINGLE CYCLE cpu IS TRIVIAL - EACH INSTRUCTION IS EXECUTED
-// IN ONE CYCLE
+#ifdef DEBUG
 	printf("[cycle %d] \n", cycle_number);
 	for(int i = 0 ; i < PIPELINE_SIZE ; i++){
 		switch(i){
@@ -228,6 +230,7 @@ int main(int argc, char **argv)
 		  printf("\tSQUASHED:\n");
       }
 	}
+#endif
 	
 	
     if (trace_view_on && (tr_out_entry != NULL)) {
