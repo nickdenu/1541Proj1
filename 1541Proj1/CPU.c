@@ -98,6 +98,7 @@ int main(int argc, char **argv)
   int *prediction_correct = (int *)malloc(PIPELINE_SIZE * sizeof(int));
   int *btb_PC = (int *)malloc(BTB_SIZE * (sizeof(int)));
   int *btb_taken = (int *)malloc(BTB_SIZE * (sizeof(int)));
+  int *btb_prevmissed = (int *)malloc(BTB_SIZE * (sizeof(int)));
   
   while(1) {
 	if(squashed){
@@ -291,6 +292,7 @@ int main(int argc, char **argv)
 	// CONTROL HAZARD/BRANCHING CORRECTION
 	// ///////////////////////////////////
 	switch (prediction_method) {
+		// Always predict not taken
 		case 0:
 			// Check if the instruction fetched after the branch is at the branch target. If so, you were wrong.
 			if (pipeline_array[s_IF2]->type == ti_BRANCH) {
@@ -306,6 +308,7 @@ int main(int argc, char **argv)
 				squashed = s_EX1 + 1;
 			}
 			break;
+		// 1-bit branch prediction
 		case 1:
 			// Check if branch instruction that entered pipeline is in table 
 			fetched_pc9to4 = (pipeline_array[s_IF1]->PC >> 4) & 0x3F;
@@ -336,11 +339,73 @@ int main(int argc, char **argv)
 				   // prediction was correct 
 					btb_taken[evaluated_pc9to4] = prediction[s_EX2];
 			   	} else {
+					// prediction incorrect
 					btb_taken[evaluated_pc9to4] = !prediction[s_EX2];
 					// add some squanch
 					squashed = s_EX1 + 1;
 				}
 			}	   
+			break;
+		// 2-bit branch prediction
+		case 2:
+			// Check if branch instruction that entered pipeline is in table 
+			fetched_pc9to4 = (pipeline_array[s_IF1]->PC >> 4) & 0x3F;
+			if (pipeline_array[s_IF1]->type == ti_BRANCH && btb_PC[fetched_pc9to4] == pipeline_array[s_IF1]->PC) {
+				// copy last taken behavior
+				prediction[s_IF1] = btb_taken[fetched_pc9to4];
+			} else {
+				// default to predicting not taken
+				prediction[s_IF1] = b_nottaken;
+			}
+
+			// Keep track of whether prediction was correct
+			if (pipeline_array[s_IF2]->type == ti_BRANCH) {
+				if (pipeline_array[s_IF1]->PC == pipeline_array[s_IF2]->Addr) {
+					// branch was taken
+					prediction_correct[s_IF2] = (prediction[s_IF2] == b_taken) ? 1 : 0;
+				} else {
+					// branch was not taken
+					prediction_correct[s_IF2] = (prediction[s_IF2] == b_nottaken) ? 1 : 0;
+				}
+			}
+
+			// Evaluate branch at EX2
+			evaluated_pc9to4 = (pipeline_array[s_EX2]->PC >> 4) & 0x3F;
+			if (pipeline_array[s_EX2]->type == ti_BRANCH) {
+				// different behavior depending on if instruction was already in buffer
+				if (btb_PC[evaluated_pc9to4] != pipeline_array[s_EX2]->PC) {
+					// first time adding, overwrite	
+					btb_PC[evaluated_pc9to4] = pipeline_array[s_EX2]->PC;
+					if (prediction_correct[s_EX2]) {
+						// prediction correct, so store not taken in btb
+						btb_taken[evaluated_pc9to4] = prediction[s_EX2];
+						btb_prevmissed[evaluated_pc9to4] = 0; 
+					} else {
+						// prediction incorrect, but only 1 miss so don't change
+						btb_taken[evaluated_pc9to4] = prediction[s_EX2];
+						btb_prevmissed[evaluated_pc9to4] = 1;
+					}
+				} else {
+					// value already in buffer
+					if (prediction_correct[s_EX2]) {
+						// prediction was correct, so erase consecutive misses
+						btb_prevmissed[evaluated_pc9to4] = 0;
+					} else {
+						// prediction incorrect, but only switch if missed previously as well
+						if (btb_prevmissed[evaluated_pc9to4] == 1) {
+							// 2 consecutive misses
+							btb_taken[evaluated_pc9to4] = !prediction[s_EX2];
+							btb_prevmissed[evaluated_pc9to4] = 0;
+						} else {
+							btb_prevmissed[evaluated_pc9to4] = 1;
+						}
+						// add some squanch
+						squashed = s_EX1 + 1;
+					}
+				}
+			}	   
+			break;
+		default: // do nothing
 			break;
 	}
 	
