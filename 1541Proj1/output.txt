@@ -1115,6 +1115,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 62] SQUASHED:
 [cycle 63] 
 IF1 :
 	ITYPE:(PC: 20e8fc)(sReg_a: 5)(dReg: 5)(addr: ff)
@@ -1132,6 +1133,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 63] SQUASHED:
 [cycle 64] 
 IF1 :
 	ITYPE:(PC: 20e900)(sReg_a: 4)(dReg: 2)(addr: 3)
@@ -1149,6 +1151,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 64] SQUASHED:
 [cycle 65] 
 IF1 :
 	BRANCH: (PC: 20e904)(sReg_a: 2)(sReg_b: 0)(addr: 20e920)
@@ -1166,6 +1169,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 65] SQUASHED:
 [cycle 66] 
 IF1 :
 	ITYPE:(PC: 20e920)(sReg_a: 255)(dReg: 8)(addr: 7efe)
@@ -1399,6 +1403,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 78] SQUASHED:
 [cycle 79] 
 IF1 :
 	RTYPE:(PC: 20e92c)(sReg_a: 5)(sReg_b: 2)(dReg: 9) 
@@ -1416,6 +1421,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 79] SQUASHED:
 [cycle 80] 
 IF1 :
 	ITYPE:(PC: 20e930)(sReg_a: 255)(dReg: 2)(addr: 10)
@@ -1433,6 +1439,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 80] SQUASHED:
 [cycle 81] 
 IF1 :
 	RTYPE:(PC: 20e934)(sReg_a: 9)(sReg_b: 2)(dReg: 9) 
@@ -1450,6 +1457,7 @@ MEM2 :
 	ITYPE:(PC: 20e920)(sReg_a: 255)(dReg: 8)(addr: 7efe)
 WB :
 	SQUASHED:
+[cycle 81] SQUASHED:
 [cycle 82] 
 IF1 :
 	RTYPE:(PC: 20e934)(sReg_a: 9)(sReg_b: 2)(dReg: 9) 
@@ -2439,6 +2447,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 136] SQUASHED:
 [cycle 137] 
 IF1 :
 	ITYPE:(PC: 20a9c8)(sReg_a: 16)(dReg: 4)(addr: 1)
@@ -2456,6 +2465,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 137] SQUASHED:
 [cycle 138] 
 IF1 :
 	JTYPE: (PC: 20a9cc)(addr: 20a9b8)
@@ -2473,6 +2483,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 138] SQUASHED:
 [cycle 139] 
 IF1 :
 	RTYPE:(PC: 20a9b8)(sReg_a: 0)(sReg_b: 17)(dReg: 5) 
@@ -2490,6 +2501,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 139] SQUASHED:
 [cycle 140] 
 IF1 :
 	RTYPE:(PC: 20a9b8)(sReg_a: 0)(sReg_b: 17)(dReg: 5) 
@@ -3029,6 +3041,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 169] SQUASHED:
 [cycle 170] 
 IF1 :
 	ITYPE:(PC: 20e918)(sReg_a: 4)(dReg: 2)(addr: 3)
@@ -3046,6 +3059,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 170] SQUASHED:
 [cycle 171] 
 IF1 :
 	ITYPE:(PC: 20e918)(sReg_a: 4)(dReg: 2)(addr: 3)
@@ -3063,6 +3077,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 171] SQUASHED:
 [cycle 172] 
 IF1 :
 	ITYPE:(PC: 20e918)(sReg_a: 4)(dReg: 2)(addr: 3)
@@ -3080,6 +3095,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 172] SQUASHED:
 [cycle 173] 
 IF1 :
 	ITYPE:(PC: 20e918)(sReg_a: 4)(dReg: 2)(addr: 3)
@@ -4051,6 +4067,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 226] SQUASHED:
 [cycle 227] 
 IF1 :
 	RTYPE:(PC: 20e94c)(sReg_a: 3)(sReg_b: 2)(dReg: 3) 
@@ -4068,6 +4085,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 227] SQUASHED:
 [cycle 228] 
 IF1 :
 	RTYPE:(PC: 20e950)(sReg_a: 3)(sReg_b: 7)(dReg: 3) 
@@ -4085,6 +4103,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 228] SQUASHED:
 [cycle 229] 
 IF1 :
 	RTYPE:(PC: 20e950)(sReg_a: 3)(sReg_b: 7)(dReg: 3) 
@@ -4102,6 +4121,7 @@ MEM2 :
 	LOAD:(PC: 20e938)(sReg_a: 4)(dReg: 6)(addr: ed67e436)
 WB :
 	SQUASHED:
+[cycle 229] SQUASHED:
 [cycle 230] 
 IF1 :
 	BRANCH: (PC: 20e954)(sReg_a: 3)(sReg_b: 0)(addr: 20e970)
@@ -5127,6 +5147,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 286] SQUASHED:
 [cycle 287] 
 IF1 :
 	ITYPE:(PC: 20a9c8)(sReg_a: 16)(dReg: 4)(addr: 1)
@@ -5144,6 +5165,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 287] SQUASHED:
 [cycle 288] 
 IF1 :
 	JTYPE: (PC: 20a9cc)(addr: 20a9b8)
@@ -5161,6 +5183,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 288] SQUASHED:
 [cycle 289] 
 IF1 :
 	RTYPE:(PC: 20a9b8)(sReg_a: 0)(sReg_b: 17)(dReg: 5) 
@@ -5178,6 +5201,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 289] SQUASHED:
 [cycle 290] 
 IF1 :
 	RTYPE:(PC: 20a9b8)(sReg_a: 0)(sReg_b: 17)(dReg: 5) 
@@ -5483,6 +5507,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 306] SQUASHED:
 [cycle 307] 
 IF1 :
 	RTYPE:(PC: 20e92c)(sReg_a: 5)(sReg_b: 2)(dReg: 9) 
@@ -5500,6 +5525,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 307] SQUASHED:
 [cycle 308] 
 IF1 :
 	ITYPE:(PC: 20e930)(sReg_a: 255)(dReg: 2)(addr: 10)
@@ -5517,6 +5543,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 308] SQUASHED:
 [cycle 309] 
 IF1 :
 	RTYPE:(PC: 20e934)(sReg_a: 9)(sReg_b: 2)(dReg: 9) 
@@ -5534,6 +5561,7 @@ MEM2 :
 	ITYPE:(PC: 20e920)(sReg_a: 255)(dReg: 8)(addr: 7efe)
 WB :
 	SQUASHED:
+[cycle 309] SQUASHED:
 [cycle 310] 
 IF1 :
 	RTYPE:(PC: 20e934)(sReg_a: 9)(sReg_b: 2)(dReg: 9) 
@@ -6289,6 +6317,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 351] SQUASHED:
 [cycle 352] 
 IF1 :
 	RTYPE:(PC: 20e94c)(sReg_a: 3)(sReg_b: 2)(dReg: 3) 
@@ -6306,6 +6335,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 352] SQUASHED:
 [cycle 353] 
 IF1 :
 	RTYPE:(PC: 20e950)(sReg_a: 3)(sReg_b: 7)(dReg: 3) 
@@ -6323,6 +6353,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 353] SQUASHED:
 [cycle 354] 
 IF1 :
 	RTYPE:(PC: 20e950)(sReg_a: 3)(sReg_b: 7)(dReg: 3) 
@@ -6340,6 +6371,7 @@ MEM2 :
 	LOAD:(PC: 20e938)(sReg_a: 4)(dReg: 6)(addr: f068fb37)
 WB :
 	SQUASHED:
+[cycle 354] SQUASHED:
 [cycle 355] 
 IF1 :
 	BRANCH: (PC: 20e954)(sReg_a: 3)(sReg_b: 0)(addr: 20e970)
@@ -6591,6 +6623,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 368] SQUASHED:
 [cycle 369] 
 IF1 :
 	RTYPE:(PC: 20e9bc)(sReg_a: 0)(sReg_b: 0)(dReg: 2) 
@@ -6608,6 +6641,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 369] SQUASHED:
 [cycle 370] 
 IF1 :
 	ITYPE:(PC: 20e9c0)(sReg_a: 29)(dReg: 29)(addr: 10)
@@ -6625,6 +6659,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 370] SQUASHED:
 [cycle 371] 
 IF1 :
 	ITYPE:(PC: 20e9c0)(sReg_a: 29)(dReg: 29)(addr: 10)
@@ -6642,6 +6677,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 371] SQUASHED:
 [cycle 372] 
 IF1 :
 	ITYPE:(PC: 20e9c0)(sReg_a: 29)(dReg: 29)(addr: 10)
@@ -6767,6 +6803,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 378] SQUASHED:
 [cycle 379] 
 IF1 :
 	RTYPE:(PC: 20a9d0)(sReg_a: 0)(sReg_b: 16)(dReg: 2) 
@@ -6784,6 +6821,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 379] SQUASHED:
 [cycle 380] 
 IF1 :
 	LOAD:(PC: 20a9d4)(sReg_a: 29)(dReg: 31)(addr: 8040d318)
@@ -6801,6 +6839,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 380] SQUASHED:
 [cycle 381] 
 IF1 :
 	LOAD:(PC: 20a9d8)(sReg_a: 29)(dReg: 17)(addr: 7fff7fc7)
@@ -6818,6 +6857,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 381] SQUASHED:
 [cycle 382] 
 IF1 :
 	LOAD:(PC: 20a9dc)(sReg_a: 29)(dReg: 16)(addr: ffff0063)
@@ -6907,6 +6947,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 386] SQUASHED:
 [cycle 387] 
 IF1 :
 	JRTYPE: (PC: 20a9e4) (sReg_a: 255)(addr: 20cd94)
@@ -6924,6 +6965,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 387] SQUASHED:
 [cycle 388] 
 IF1 :
 	BRANCH: (PC: 20cd94)(sReg_a: 2)(sReg_b: 0)(addr: 20cda0)
@@ -6941,6 +6983,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 388] SQUASHED:
 [cycle 389] 
 IF1 :
 	ITYPE:(PC: 20cda0)(sReg_a: 2)(dReg: 2)(addr: 1)
@@ -6958,6 +7001,7 @@ MEM2 :
 	RTYPE:(PC: 20a9d0)(sReg_a: 0)(sReg_b: 16)(dReg: 2) 
 WB :
 	SQUASHED:
+[cycle 389] SQUASHED:
 [cycle 390] 
 IF1 :
 	ITYPE:(PC: 20cda0)(sReg_a: 2)(dReg: 2)(addr: 1)
@@ -7173,6 +7217,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 401] SQUASHED:
 [cycle 402] 
 IF1 :
 	LOAD:(PC: 20cdac)(sReg_a: 29)(dReg: 16)(addr: fffeffbc)
@@ -7190,6 +7235,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 402] SQUASHED:
 [cycle 403] 
 IF1 :
 	ITYPE:(PC: 20cdb0)(sReg_a: 29)(dReg: 29)(addr: 18)
@@ -7207,6 +7253,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 403] SQUASHED:
 [cycle 404] 
 IF1 :
 	JRTYPE: (PC: 20cdb4) (sReg_a: 255)(addr: 20a01c)
@@ -7224,6 +7271,7 @@ MEM2 :
 	ITYPE:(PC: 20cda0)(sReg_a: 2)(dReg: 2)(addr: 1)
 WB :
 	SQUASHED:
+[cycle 404] SQUASHED:
 [cycle 405] 
 IF1 :
 	LOAD:(PC: 20a01c)(sReg_a: 29)(dReg: 31)(addr: 8040c008)
@@ -8249,6 +8297,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 461] SQUASHED:
 [cycle 462] 
 IF1 :
 	JTYPE: (PC: 209ff4)(addr: 20cc68)
@@ -8266,6 +8315,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 462] SQUASHED:
 [cycle 463] 
 IF1 :
 	JTYPE: (PC: 209ff4)(addr: 20cc68)
@@ -8283,6 +8333,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 463] SQUASHED:
 [cycle 464] 
 IF1 :
 	ITYPE:(PC: 20cc68)(sReg_a: 29)(dReg: 29)(addr: ffffffe8)
@@ -8300,6 +8351,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 464] SQUASHED:
 [cycle 465] 
 IF1 :
 	STORE: (PC: 20cc6c)(sReg_a: 29)(sReg_b: 16)(addr: 7fff7f98)
@@ -8821,6 +8873,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 493] SQUASHED:
 [cycle 494] 
 IF1 :
 	STORE: (PC: 20cd44)(sReg_a: 7)(sReg_b: 2)(addr: 100034d4)
@@ -8838,6 +8891,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 494] SQUASHED:
 [cycle 495] 
 IF1 :
 	STORE: (PC: 20cd44)(sReg_a: 7)(sReg_b: 2)(addr: 100034d4)
@@ -8855,6 +8909,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 495] SQUASHED:
 [cycle 496] 
 IF1 :
 	STORE: (PC: 20cd44)(sReg_a: 7)(sReg_b: 2)(addr: 100034d4)
@@ -8872,6 +8927,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 496] SQUASHED:
 [cycle 497] 
 IF1 :
 	STORE: (PC: 20cd44)(sReg_a: 7)(sReg_b: 2)(addr: 100034d4)
@@ -10419,6 +10475,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 582] SQUASHED:
 [cycle 583] 
 IF1 :
 	RTYPE:(PC: 20bb64)(sReg_a: 0)(sReg_b: 4)(dReg: 10) 
@@ -10436,6 +10493,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 583] SQUASHED:
 [cycle 584] 
 IF1 :
 	RTYPE:(PC: 20bb64)(sReg_a: 0)(sReg_b: 4)(dReg: 10) 
@@ -10453,6 +10511,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 584] SQUASHED:
 [cycle 585] 
 IF1 :
 	RTYPE:(PC: 20bb64)(sReg_a: 0)(sReg_b: 4)(dReg: 10) 
@@ -10470,6 +10529,7 @@ MEM2 :
 	LOAD:(PC: 20bb50)(sReg_a: 4)(dReg: 2)(addr: 7fff80eb)
 WB :
 	SQUASHED:
+[cycle 585] SQUASHED:
 [cycle 586] 
 IF1 :
 	ITYPE:(PC: 20bb68)(sReg_a: 2)(dReg: 2)(addr: 10)
@@ -10757,6 +10817,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 601] SQUASHED:
 [cycle 602] 
 IF1 :
 	BRANCH: (PC: 20bb98)(sReg_a: 3)(sReg_b: 2)(addr: 20bba8)
@@ -10774,6 +10835,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 602] SQUASHED:
 [cycle 603] 
 IF1 :
 	BRANCH: (PC: 20bb98)(sReg_a: 3)(sReg_b: 2)(addr: 20bba8)
@@ -10791,6 +10853,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 603] SQUASHED:
 [cycle 604] 
 IF1 :
 	BRANCH: (PC: 20bb98)(sReg_a: 3)(sReg_b: 2)(addr: 20bba8)
@@ -10808,6 +10871,7 @@ MEM2 :
 	LOAD:(PC: 20bb8c)(sReg_a: 10)(dReg: 3)(addr: 8fff941c)
 WB :
 	SQUASHED:
+[cycle 604] SQUASHED:
 [cycle 605] 
 IF1 :
 	ITYPE:(PC: 20bba8)(sReg_a: 0)(dReg: 2)(addr: 2b)
@@ -10987,6 +11051,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 614] SQUASHED:
 [cycle 615] 
 IF1 :
 	ITYPE:(PC: 20bbc0)(sReg_a: 0)(dReg: 2)(addr: 10)
@@ -11004,6 +11069,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 615] SQUASHED:
 [cycle 616] 
 IF1 :
 	BRANCH: (PC: 20bbc4)(sReg_a: 6)(sReg_b: 2)(addr: 20bbf4)
@@ -11021,6 +11087,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 616] SQUASHED:
 [cycle 617] 
 IF1 :
 	BRANCH: (PC: 20bbf4)(sReg_a: 6)(sReg_b: 0)(addr: 20bc38)
@@ -11038,6 +11105,7 @@ MEM2 :
 	ITYPE:(PC: 20bba8)(sReg_a: 0)(dReg: 2)(addr: 2b)
 WB :
 	SQUASHED:
+[cycle 617] SQUASHED:
 [cycle 618] 
 IF1 :
 	BRANCH: (PC: 20bbf4)(sReg_a: 6)(sReg_b: 0)(addr: 20bc38)
@@ -11109,6 +11177,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 621] SQUASHED:
 [cycle 622] 
 IF1 :
 	RTYPE:(PC: 20bc3c)(sReg_a: 2)(sReg_b: 255)(dReg: 6) 
@@ -11126,6 +11195,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 622] SQUASHED:
 [cycle 623] 
 IF1 :
 	RTYPE:(PC: 20bc3c)(sReg_a: 2)(sReg_b: 255)(dReg: 6) 
@@ -11143,6 +11213,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 623] SQUASHED:
 [cycle 624] 
 IF1 :
 	BRANCH: (PC: 20bc40)(sReg_a: 6)(sReg_b: 0)(addr: 20bc48)
@@ -11160,6 +11231,7 @@ MEM2 :
 	RTYPE:(PC: 20bbbc)(sReg_a: 0)(sReg_b: 0)(dReg: 13) 
 WB :
 	SQUASHED:
+[cycle 624] SQUASHED:
 [cycle 625] 
 IF1 :
 	RTYPE:(PC: 20bc48)(sReg_a: 255)(sReg_b: 255)(dReg: 11) 
@@ -11375,6 +11447,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 636] SQUASHED:
 [cycle 637] 
 IF1 :
 	RTYPE:(PC: 20bc5c)(sReg_a: 0)(sReg_b: 10)(dReg: 25) 
@@ -11392,6 +11465,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 637] SQUASHED:
 [cycle 638] 
 IF1 :
 	BRANCH: (PC: 20bc60)(sReg_a: 7)(sReg_b: 0)(addr: 20bce4)
@@ -11409,6 +11483,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 638] SQUASHED:
 [cycle 639] 
 IF1 :
 	LOAD:(PC: 20bc64)(sReg_a: 28)(dReg: 15)(addr: 1000c000)
@@ -11426,6 +11501,7 @@ MEM2 :
 	RTYPE:(PC: 20bc48)(sReg_a: 255)(sReg_b: 255)(dReg: 11) 
 WB :
 	SQUASHED:
+[cycle 639] SQUASHED:
 [cycle 640] 
 IF1 :
 	LOAD:(PC: 20bc68)(sReg_a: 28)(dReg: 14)(addr: 1000c000)
@@ -12199,6 +12275,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 682] SQUASHED:
 [cycle 683] 
 IF1 :
 	LOAD:(PC: 20bcdc)(sReg_a: 10)(dReg: 7)(addr: 7fff80f1)
@@ -12216,6 +12293,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 683] SQUASHED:
 [cycle 684] 
 IF1 :
 	BRANCH: (PC: 20bce0)(sReg_a: 7)(sReg_b: 0)(addr: 20bc6c)
@@ -12233,6 +12311,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 684] SQUASHED:
 [cycle 685] 
 IF1 :
 	ITYPE:(PC: 20bc6c)(sReg_a: 7)(dReg: 2)(addr: ff)
@@ -12250,6 +12329,7 @@ MEM2 :
 	RTYPE:(PC: 20bcc8)(sReg_a: 9)(sReg_b: 255)(dReg: 6) 
 WB :
 	SQUASHED:
+[cycle 685] SQUASHED:
 [cycle 686] 
 IF1 :
 	ITYPE:(PC: 20bc6c)(sReg_a: 7)(dReg: 2)(addr: ff)
@@ -12519,6 +12599,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 700] SQUASHED:
 [cycle 701] 
 IF1 :
 	ITYPE:(PC: 20bc7c)(sReg_a: 3)(dReg: 2)(addr: 8)
@@ -12536,6 +12617,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 701] SQUASHED:
 [cycle 702] 
 IF1 :
 	ITYPE:(PC: 20bc7c)(sReg_a: 3)(dReg: 2)(addr: 8)
@@ -12553,6 +12635,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 702] SQUASHED:
 [cycle 703] 
 IF1 :
 	BRANCH: (PC: 20bc80)(sReg_a: 2)(sReg_b: 0)(addr: 20bc8c)
@@ -12570,6 +12653,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 703] SQUASHED:
 [cycle 704] 
 IF1 :
 	ITYPE:(PC: 20bc84)(sReg_a: 7)(dReg: 7)(addr: ffffffd0)
@@ -13073,6 +13157,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 731] SQUASHED:
 [cycle 732] 
 IF1 :
 	LOAD:(PC: 20bcdc)(sReg_a: 10)(dReg: 7)(addr: 7fff80ec)
@@ -13090,6 +13175,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 732] SQUASHED:
 [cycle 733] 
 IF1 :
 	BRANCH: (PC: 20bce0)(sReg_a: 7)(sReg_b: 0)(addr: 20bc6c)
@@ -13107,6 +13193,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 733] SQUASHED:
 [cycle 734] 
 IF1 :
 	BRANCH: (PC: 20bce4)(sReg_a: 10)(sReg_b: 25)(addr: 20bd3c)
@@ -13124,6 +13211,7 @@ MEM2 :
 	RTYPE:(PC: 20bcc8)(sReg_a: 9)(sReg_b: 255)(dReg: 6) 
 WB :
 	SQUASHED:
+[cycle 734] SQUASHED:
 [cycle 735] 
 IF1 :
 	BRANCH: (PC: 20bce4)(sReg_a: 10)(sReg_b: 25)(addr: 20bd3c)
@@ -13447,6 +13535,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 752] SQUASHED:
 [cycle 753] 
 IF1 :
 	JRTYPE: (PC: 20bd48) (sReg_a: 255)(addr: 205324)
@@ -13464,6 +13553,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 753] SQUASHED:
 [cycle 754] 
 IF1 :
 	JRTYPE: (PC: 20bd48) (sReg_a: 255)(addr: 205324)
@@ -13481,6 +13571,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 754] SQUASHED:
 [cycle 755] 
 IF1 :
 	JRTYPE: (PC: 20bd48) (sReg_a: 255)(addr: 205324)
@@ -13498,6 +13589,7 @@ MEM2 :
 	BRANCH: (PC: 20bcf0)(sReg_a: 13)(sReg_b: 0)(addr: 20bd04)
 WB :
 	SQUASHED:
+[cycle 755] SQUASHED:
 [cycle 756] 
 IF1 :
 	JRTYPE: (PC: 20bd48) (sReg_a: 255)(addr: 205324)
@@ -13533,6 +13625,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 757] SQUASHED:
 [cycle 758] 
 IF1 :
 	ITYPE:(PC: 205328)(sReg_a: 16)(dReg: 2)(addr: 4)
@@ -13550,6 +13643,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 758] SQUASHED:
 [cycle 759] 
 IF1 :
 	ITYPE:(PC: 205328)(sReg_a: 16)(dReg: 2)(addr: 4)
@@ -13567,6 +13661,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 759] SQUASHED:
 [cycle 760] 
 IF1 :
 	ITYPE:(PC: 205328)(sReg_a: 16)(dReg: 2)(addr: 4)
@@ -13584,6 +13679,7 @@ MEM2 :
 	BRANCH: (PC: 20bd04)(sReg_a: 9)(sReg_b: 255)(addr: 20bd0c)
 WB :
 	SQUASHED:
+[cycle 760] SQUASHED:
 [cycle 761] 
 IF1 :
 	ITYPE:(PC: 205328)(sReg_a: 16)(dReg: 2)(addr: 4)
@@ -13619,6 +13715,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 762] SQUASHED:
 [cycle 763] 
 IF1 :
 	RTYPE:(PC: 205344)(sReg_a: 0)(sReg_b: 18)(dReg: 2) 
@@ -13636,6 +13733,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 763] SQUASHED:
 [cycle 764] 
 IF1 :
 	ITYPE:(PC: 205348)(sReg_a: 255)(dReg: 16)(addr: 14)
@@ -13653,6 +13751,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 764] SQUASHED:
 [cycle 765] 
 IF1 :
 	ITYPE:(PC: 20534c)(sReg_a: 255)(dReg: 2)(addr: 14)
@@ -13670,6 +13769,7 @@ MEM2 :
 	BRANCH: (PC: 20bd0c)(sReg_a: 12)(sReg_b: 0)(addr: 20bd2c)
 WB :
 	SQUASHED:
+[cycle 765] SQUASHED:
 [cycle 766] 
 IF1 :
 	ITYPE:(PC: 205350)(sReg_a: 255)(dReg: 1)(addr: 1005)
@@ -13759,6 +13859,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 770] SQUASHED:
 [cycle 771] 
 IF1 :
 	ITYPE:(PC: 205358)(sReg_a: 255)(dReg: 1)(addr: 1005)
@@ -13776,6 +13877,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 771] SQUASHED:
 [cycle 772] 
 IF1 :
 	STORE: (PC: 20535c)(sReg_a: 1)(sReg_b: 2)(addr: 100556a0)
@@ -13793,6 +13895,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 772] SQUASHED:
 [cycle 773] 
 IF1 :
 	ITYPE:(PC: 205360)(sReg_a: 255)(dReg: 1)(addr: 1005)
@@ -13810,6 +13913,7 @@ MEM2 :
 	RTYPE:(PC: 205344)(sReg_a: 0)(sReg_b: 18)(dReg: 2) 
 WB :
 	SQUASHED:
+[cycle 773] SQUASHED:
 [cycle 774] 
 IF1 :
 	STORE: (PC: 205364)(sReg_a: 1)(sReg_b: 16)(addr: 100556b0)
@@ -15213,6 +15317,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 851] SQUASHED:
 [cycle 852] 
 IF1 :
 	LOAD:(PC: 20cfb0)(sReg_a: 20)(dReg: 2)(addr: edaf31b)
@@ -15230,6 +15335,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 852] SQUASHED:
 [cycle 853] 
 IF1 :
 	ITYPE:(PC: 20cfb4)(sReg_a: 2)(dReg: 2)(addr: 2)
@@ -15247,6 +15353,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 853] SQUASHED:
 [cycle 854] 
 IF1 :
 	ITYPE:(PC: 20cfb4)(sReg_a: 2)(dReg: 2)(addr: 2)
@@ -15264,6 +15371,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 854] SQUASHED:
 [cycle 855] 
 IF1 :
 	ITYPE:(PC: 20cfb4)(sReg_a: 2)(dReg: 2)(addr: 2)
@@ -15569,6 +15677,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 871] SQUASHED:
 [cycle 872] 
 IF1 :
 	RTYPE:(PC: 20cfdc)(sReg_a: 0)(sReg_b: 20)(dReg: 4) 
@@ -15586,6 +15695,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 872] SQUASHED:
 [cycle 873] 
 IF1 :
 	RTYPE:(PC: 20cfdc)(sReg_a: 0)(sReg_b: 20)(dReg: 4) 
@@ -15603,6 +15713,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 873] SQUASHED:
 [cycle 874] 
 IF1 :
 	RTYPE:(PC: 20cfdc)(sReg_a: 0)(sReg_b: 20)(dReg: 4) 
@@ -15620,6 +15731,7 @@ MEM2 :
 	LOAD:(PC: 20cfd0)(sReg_a: 20)(dReg: 2)(addr: 10003432)
 WB :
 	SQUASHED:
+[cycle 874] SQUASHED:
 [cycle 875] 
 IF1 :
 	ITYPE:(PC: 20cfe0)(sReg_a: 0)(dReg: 5)(addr: ffffffff)
@@ -16321,6 +16433,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 913] SQUASHED:
 [cycle 914] 
 IF1 :
 	LOAD:(PC: 20c71c)(sReg_a: 16)(dReg: 2)(addr: edaf31b)
@@ -16338,6 +16451,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 914] SQUASHED:
 [cycle 915] 
 IF1 :
 	ITYPE:(PC: 20c720)(sReg_a: 2)(dReg: 2)(addr: 2)
@@ -16355,6 +16469,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 915] SQUASHED:
 [cycle 916] 
 IF1 :
 	ITYPE:(PC: 20c720)(sReg_a: 2)(dReg: 2)(addr: 2)
@@ -16372,6 +16487,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 916] SQUASHED:
 [cycle 917] 
 IF1 :
 	ITYPE:(PC: 20c720)(sReg_a: 2)(dReg: 2)(addr: 2)
@@ -16659,6 +16775,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 932] SQUASHED:
 [cycle 933] 
 IF1 :
 	ITYPE:(PC: 20c744)(sReg_a: 3)(dReg: 2)(addr: 100)
@@ -16676,6 +16793,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 933] SQUASHED:
 [cycle 934] 
 IF1 :
 	ITYPE:(PC: 20c744)(sReg_a: 3)(dReg: 2)(addr: 100)
@@ -16693,6 +16811,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 934] SQUASHED:
 [cycle 935] 
 IF1 :
 	ITYPE:(PC: 20c744)(sReg_a: 3)(dReg: 2)(addr: 100)
@@ -16710,6 +16829,7 @@ MEM2 :
 	LOAD:(PC: 20c738)(sReg_a: 16)(dReg: 3)(addr: edaf31b)
 WB :
 	SQUASHED:
+[cycle 935] SQUASHED:
 [cycle 936] 
 IF1 :
 	BRANCH: (PC: 20c748)(sReg_a: 2)(sReg_b: 0)(addr: 20c764)
@@ -16925,6 +17045,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 947] SQUASHED:
 [cycle 948] 
 IF1 :
 	LOAD:(PC: 20c770)(sReg_a: 28)(dReg: 2)(addr: 1000c000)
@@ -16942,6 +17063,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 948] SQUASHED:
 [cycle 949] 
 IF1 :
 	LOAD:(PC: 20c770)(sReg_a: 28)(dReg: 2)(addr: 1000c000)
@@ -16959,6 +17081,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 949] SQUASHED:
 [cycle 950] 
 IF1 :
 	LOAD:(PC: 20c770)(sReg_a: 28)(dReg: 2)(addr: 1000c000)
@@ -16976,6 +17099,7 @@ MEM2 :
 	LOAD:(PC: 20c764)(sReg_a: 16)(dReg: 2)(addr: 10003430)
 WB :
 	SQUASHED:
+[cycle 950] SQUASHED:
 [cycle 951] 
 IF1 :
 	ITYPE:(PC: 20c774)(sReg_a: 255)(dReg: 3)(addr: 1000)
@@ -18451,6 +18575,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1032] SQUASHED:
 [cycle 1033] 
 IF1 :
 	ITYPE:(PC: 20cf10)(sReg_a: 29)(dReg: 29)(addr: ffffffe0)
@@ -18468,6 +18593,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1033] SQUASHED:
 [cycle 1034] 
 IF1 :
 	ITYPE:(PC: 20cf10)(sReg_a: 29)(dReg: 29)(addr: ffffffe0)
@@ -18485,6 +18611,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1034] SQUASHED:
 [cycle 1035] 
 IF1 :
 	ITYPE:(PC: 20cf14)(sReg_a: 255)(dReg: 5)(addr: 4006)
@@ -18502,6 +18629,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1035] SQUASHED:
 [cycle 1036] 
 IF1 :
 	STORE: (PC: 20cf18)(sReg_a: 29)(sReg_b: 16)(addr: 7fff7530)
@@ -19995,6 +20123,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1118] SQUASHED:
 [cycle 1119] 
 IF1 :
 	JTYPE: (PC: 20c7fc)(addr: 20b55c)
@@ -20012,6 +20141,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1119] SQUASHED:
 [cycle 1120] 
 IF1 :
 	LOAD:(PC: 20b55c)(sReg_a: 28)(dReg: 2)(addr: 1000c000)
@@ -20029,6 +20159,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1120] SQUASHED:
 [cycle 1121] 
 IF1 :
 	ITYPE:(PC: 20b560)(sReg_a: 29)(dReg: 29)(addr: ffffffd8)
@@ -20046,6 +20177,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1121] SQUASHED:
 [cycle 1122] 
 IF1 :
 	STORE: (PC: 20b564)(sReg_a: 29)(sReg_b: 16)(addr: 7fff7580)
@@ -20441,6 +20573,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1143] SQUASHED:
 [cycle 1144] 
 IF1 :
 	ITYPE:(PC: 20b288)(sReg_a: 29)(dReg: 29)(addr: ffffffe8)
@@ -20458,6 +20591,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1144] SQUASHED:
 [cycle 1145] 
 IF1 :
 	ITYPE:(PC: 20b288)(sReg_a: 29)(dReg: 29)(addr: ffffffe8)
@@ -20475,6 +20609,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1145] SQUASHED:
 [cycle 1146] 
 IF1 :
 	ITYPE:(PC: 20b288)(sReg_a: 29)(dReg: 29)(addr: ffffffe8)
@@ -20492,6 +20627,7 @@ MEM2 :
 	LOAD:(PC: 20b58c)(sReg_a: 28)(dReg: 2)(addr: 1000c000)
 WB :
 	SQUASHED:
+[cycle 1146] SQUASHED:
 [cycle 1147] 
 IF1 :
 	LOAD:(PC: 20b28c)(sReg_a: 28)(dReg: 3)(addr: 1000e000)
@@ -21031,6 +21167,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1176] SQUASHED:
 [cycle 1177] 
 IF1 :
 	RTYPE:(PC: 2162bc)(sReg_a: 4)(sReg_b: 2)(dReg: 1) 
@@ -21048,6 +21185,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1177] SQUASHED:
 [cycle 1178] 
 IF1 :
 	RTYPE:(PC: 2162bc)(sReg_a: 4)(sReg_b: 2)(dReg: 1) 
@@ -21065,6 +21203,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1178] SQUASHED:
 [cycle 1179] 
 IF1 :
 	RTYPE:(PC: 2162bc)(sReg_a: 4)(sReg_b: 2)(dReg: 1) 
@@ -21082,6 +21221,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1179] SQUASHED:
 [cycle 1180] 
 IF1 :
 	RTYPE:(PC: 2162bc)(sReg_a: 4)(sReg_b: 2)(dReg: 1) 
@@ -21351,6 +21491,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1194] SQUASHED:
 [cycle 1195] 
 IF1 :
 	JRTYPE: (PC: 2162dc) (sReg_a: 255)(addr: 213a8c)
@@ -21368,6 +21509,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1195] SQUASHED:
 [cycle 1196] 
 IF1 :
 	RTYPE:(PC: 213a8c)(sReg_a: 0)(sReg_b: 2)(dReg: 3) 
@@ -21385,6 +21527,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1196] SQUASHED:
 [cycle 1197] 
 IF1 :
 	ITYPE:(PC: 213a90)(sReg_a: 0)(dReg: 2)(addr: ffffffff)
@@ -21402,6 +21545,7 @@ MEM2 :
 	ITYPE:(PC: 2162c8)(sReg_a: 0)(dReg: 2)(addr: 11)
 WB :
 	SQUASHED:
+[cycle 1197] SQUASHED:
 [cycle 1198] 
 IF1 :
 	BRANCH: (PC: 213a94)(sReg_a: 3)(sReg_b: 255)(addr: 213a9c)
@@ -22535,6 +22679,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1260] SQUASHED:
 [cycle 1261] 
 IF1 :
 	RTYPE:(PC: 2162bc)(sReg_a: 4)(sReg_b: 2)(dReg: 1) 
@@ -22552,6 +22697,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1261] SQUASHED:
 [cycle 1262] 
 IF1 :
 	RTYPE:(PC: 2162bc)(sReg_a: 4)(sReg_b: 2)(dReg: 1) 
@@ -22569,6 +22715,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1262] SQUASHED:
 [cycle 1263] 
 IF1 :
 	RTYPE:(PC: 2162bc)(sReg_a: 4)(sReg_b: 2)(dReg: 1) 
@@ -22586,6 +22733,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1263] SQUASHED:
 [cycle 1264] 
 IF1 :
 	RTYPE:(PC: 2162bc)(sReg_a: 4)(sReg_b: 2)(dReg: 1) 
@@ -22855,6 +23003,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1278] SQUASHED:
 [cycle 1279] 
 IF1 :
 	JRTYPE: (PC: 2162dc) (sReg_a: 255)(addr: 213a8c)
@@ -22872,6 +23021,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1279] SQUASHED:
 [cycle 1280] 
 IF1 :
 	RTYPE:(PC: 213a8c)(sReg_a: 0)(sReg_b: 2)(dReg: 3) 
@@ -22889,6 +23039,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1280] SQUASHED:
 [cycle 1281] 
 IF1 :
 	ITYPE:(PC: 213a90)(sReg_a: 0)(dReg: 2)(addr: ffffffff)
@@ -22906,6 +23057,7 @@ MEM2 :
 	ITYPE:(PC: 2162c8)(sReg_a: 0)(dReg: 2)(addr: 11)
 WB :
 	SQUASHED:
+[cycle 1281] SQUASHED:
 [cycle 1282] 
 IF1 :
 	BRANCH: (PC: 213a94)(sReg_a: 3)(sReg_b: 255)(addr: 213a9c)
@@ -23625,6 +23777,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1321] SQUASHED:
 [cycle 1322] 
 IF1 :
 	RTYPE:(PC: 20b2e4)(sReg_a: 0)(sReg_b: 0)(dReg: 5) 
@@ -23642,6 +23795,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1322] SQUASHED:
 [cycle 1323] 
 IF1 :
 	ITYPE:(PC: 20b2e8)(sReg_a: 255)(dReg: 6)(addr: 1)
@@ -23659,6 +23813,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1323] SQUASHED:
 [cycle 1324] 
 IF1 :
 	RTYPE:(PC: 20b2ec)(sReg_a: 6)(sReg_b: 2)(dReg: 6) 
@@ -23676,6 +23831,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1324] SQUASHED:
 [cycle 1325] 
 IF1 :
 	ITYPE:(PC: 20b2f0)(sReg_a: 255)(dReg: 6)(addr: 2)
@@ -24233,6 +24389,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1355] SQUASHED:
 [cycle 1356] 
 IF1 :
 	STORE: (PC: 20a160)(sReg_a: 8)(sReg_b: 7)(addr: 10056000)
@@ -24250,6 +24407,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1356] SQUASHED:
 [cycle 1357] 
 IF1 :
 	STORE: (PC: 20a164)(sReg_a: 2)(sReg_b: 7)(addr: 10056004)
@@ -24267,6 +24425,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1357] SQUASHED:
 [cycle 1358] 
 IF1 :
 	STORE: (PC: 20a168)(sReg_a: 2)(sReg_b: 7)(addr: 10056008)
@@ -24284,6 +24443,7 @@ MEM2 :
 	ITYPE:(PC: 20a154)(sReg_a: 255)(dReg: 3)(addr: 5)
 WB :
 	SQUASHED:
+[cycle 1358] SQUASHED:
 [cycle 1359] 
 IF1 :
 	STORE: (PC: 20a16c)(sReg_a: 2)(sReg_b: 7)(addr: 1005600c)
@@ -24643,6 +24803,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1378] SQUASHED:
 [cycle 1379] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056030)
@@ -24660,6 +24821,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1379] SQUASHED:
 [cycle 1380] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056034)
@@ -24677,6 +24839,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1380] SQUASHED:
 [cycle 1381] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056038)
@@ -24694,6 +24857,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1381] SQUASHED:
 [cycle 1382] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005603c)
@@ -24945,6 +25109,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1395] SQUASHED:
 [cycle 1396] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056050)
@@ -24962,6 +25127,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1396] SQUASHED:
 [cycle 1397] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056054)
@@ -24979,6 +25145,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1397] SQUASHED:
 [cycle 1398] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056058)
@@ -24996,6 +25163,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1398] SQUASHED:
 [cycle 1399] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005605c)
@@ -25247,6 +25415,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1412] SQUASHED:
 [cycle 1413] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056070)
@@ -25264,6 +25433,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1413] SQUASHED:
 [cycle 1414] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056074)
@@ -25281,6 +25451,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1414] SQUASHED:
 [cycle 1415] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056078)
@@ -25298,6 +25469,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1415] SQUASHED:
 [cycle 1416] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005607c)
@@ -25549,6 +25721,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1429] SQUASHED:
 [cycle 1430] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056090)
@@ -25566,6 +25739,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1430] SQUASHED:
 [cycle 1431] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056094)
@@ -25583,6 +25757,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1431] SQUASHED:
 [cycle 1432] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056098)
@@ -25600,6 +25775,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1432] SQUASHED:
 [cycle 1433] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005609c)
@@ -25851,6 +26027,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1446] SQUASHED:
 [cycle 1447] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 100560b0)
@@ -25868,6 +26045,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1447] SQUASHED:
 [cycle 1448] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 100560b4)
@@ -25885,6 +26063,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1448] SQUASHED:
 [cycle 1449] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 100560b8)
@@ -25902,6 +26081,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1449] SQUASHED:
 [cycle 1450] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 100560bc)
@@ -26153,6 +26333,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1463] SQUASHED:
 [cycle 1464] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 100560d0)
@@ -26170,6 +26351,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1464] SQUASHED:
 [cycle 1465] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 100560d4)
@@ -26187,6 +26369,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1465] SQUASHED:
 [cycle 1466] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 100560d8)
@@ -26204,6 +26387,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1466] SQUASHED:
 [cycle 1467] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 100560dc)
@@ -26455,6 +26639,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1480] SQUASHED:
 [cycle 1481] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 100560f0)
@@ -26472,6 +26657,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1481] SQUASHED:
 [cycle 1482] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 100560f4)
@@ -26489,6 +26675,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1482] SQUASHED:
 [cycle 1483] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 100560f8)
@@ -26506,6 +26693,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1483] SQUASHED:
 [cycle 1484] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 100560fc)
@@ -26757,6 +26945,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1497] SQUASHED:
 [cycle 1498] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056110)
@@ -26774,6 +26963,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1498] SQUASHED:
 [cycle 1499] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056114)
@@ -26791,6 +26981,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1499] SQUASHED:
 [cycle 1500] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056118)
@@ -26808,6 +26999,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1500] SQUASHED:
 [cycle 1501] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005611c)
@@ -27059,6 +27251,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1514] SQUASHED:
 [cycle 1515] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056130)
@@ -27076,6 +27269,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1515] SQUASHED:
 [cycle 1516] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056134)
@@ -27093,6 +27287,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1516] SQUASHED:
 [cycle 1517] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056138)
@@ -27110,6 +27305,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1517] SQUASHED:
 [cycle 1518] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005613c)
@@ -27361,6 +27557,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1531] SQUASHED:
 [cycle 1532] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056150)
@@ -27378,6 +27575,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1532] SQUASHED:
 [cycle 1533] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056154)
@@ -27395,6 +27593,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1533] SQUASHED:
 [cycle 1534] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056158)
@@ -27412,6 +27611,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1534] SQUASHED:
 [cycle 1535] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005615c)
@@ -27663,6 +27863,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1548] SQUASHED:
 [cycle 1549] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056170)
@@ -27680,6 +27881,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1549] SQUASHED:
 [cycle 1550] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056174)
@@ -27697,6 +27899,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1550] SQUASHED:
 [cycle 1551] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056178)
@@ -27714,6 +27917,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1551] SQUASHED:
 [cycle 1552] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005617c)
@@ -27965,6 +28169,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1565] SQUASHED:
 [cycle 1566] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056190)
@@ -27982,6 +28187,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1566] SQUASHED:
 [cycle 1567] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056194)
@@ -27999,6 +28205,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1567] SQUASHED:
 [cycle 1568] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056198)
@@ -28016,6 +28223,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1568] SQUASHED:
 [cycle 1569] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005619c)
@@ -28267,6 +28475,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1582] SQUASHED:
 [cycle 1583] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 100561b0)
@@ -28284,6 +28493,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1583] SQUASHED:
 [cycle 1584] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 100561b4)
@@ -28301,6 +28511,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1584] SQUASHED:
 [cycle 1585] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 100561b8)
@@ -28318,6 +28529,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1585] SQUASHED:
 [cycle 1586] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 100561bc)
@@ -28569,6 +28781,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1599] SQUASHED:
 [cycle 1600] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 100561d0)
@@ -28586,6 +28799,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1600] SQUASHED:
 [cycle 1601] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 100561d4)
@@ -28603,6 +28817,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1601] SQUASHED:
 [cycle 1602] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 100561d8)
@@ -28620,6 +28835,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1602] SQUASHED:
 [cycle 1603] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 100561dc)
@@ -28871,6 +29087,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1616] SQUASHED:
 [cycle 1617] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 100561f0)
@@ -28888,6 +29105,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1617] SQUASHED:
 [cycle 1618] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 100561f4)
@@ -28905,6 +29123,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1618] SQUASHED:
 [cycle 1619] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 100561f8)
@@ -28922,6 +29141,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1619] SQUASHED:
 [cycle 1620] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 100561fc)
@@ -29173,6 +29393,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1633] SQUASHED:
 [cycle 1634] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056210)
@@ -29190,6 +29411,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1634] SQUASHED:
 [cycle 1635] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056214)
@@ -29207,6 +29429,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1635] SQUASHED:
 [cycle 1636] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056218)
@@ -29224,6 +29447,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1636] SQUASHED:
 [cycle 1637] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005621c)
@@ -29475,6 +29699,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1650] SQUASHED:
 [cycle 1651] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056230)
@@ -29492,6 +29717,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1651] SQUASHED:
 [cycle 1652] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056234)
@@ -29509,6 +29735,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1652] SQUASHED:
 [cycle 1653] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056238)
@@ -29526,6 +29753,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1653] SQUASHED:
 [cycle 1654] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005623c)
@@ -29777,6 +30005,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1667] SQUASHED:
 [cycle 1668] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056250)
@@ -29794,6 +30023,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1668] SQUASHED:
 [cycle 1669] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056254)
@@ -29811,6 +30041,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1669] SQUASHED:
 [cycle 1670] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056258)
@@ -29828,6 +30059,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1670] SQUASHED:
 [cycle 1671] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005625c)
@@ -30079,6 +30311,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1684] SQUASHED:
 [cycle 1685] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056270)
@@ -30096,6 +30329,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1685] SQUASHED:
 [cycle 1686] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056274)
@@ -30113,6 +30347,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1686] SQUASHED:
 [cycle 1687] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056278)
@@ -30130,6 +30365,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1687] SQUASHED:
 [cycle 1688] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005627c)
@@ -30381,6 +30617,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1701] SQUASHED:
 [cycle 1702] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056290)
@@ -30398,6 +30635,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1702] SQUASHED:
 [cycle 1703] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056294)
@@ -30415,6 +30653,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1703] SQUASHED:
 [cycle 1704] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056298)
@@ -30432,6 +30671,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1704] SQUASHED:
 [cycle 1705] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005629c)
@@ -30683,6 +30923,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1718] SQUASHED:
 [cycle 1719] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 100562b0)
@@ -30700,6 +30941,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1719] SQUASHED:
 [cycle 1720] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 100562b4)
@@ -30717,6 +30959,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1720] SQUASHED:
 [cycle 1721] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 100562b8)
@@ -30734,6 +30977,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1721] SQUASHED:
 [cycle 1722] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 100562bc)
@@ -30985,6 +31229,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1735] SQUASHED:
 [cycle 1736] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 100562d0)
@@ -31002,6 +31247,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1736] SQUASHED:
 [cycle 1737] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 100562d4)
@@ -31019,6 +31265,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1737] SQUASHED:
 [cycle 1738] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 100562d8)
@@ -31036,6 +31283,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1738] SQUASHED:
 [cycle 1739] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 100562dc)
@@ -31287,6 +31535,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1752] SQUASHED:
 [cycle 1753] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 100562f0)
@@ -31304,6 +31553,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1753] SQUASHED:
 [cycle 1754] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 100562f4)
@@ -31321,6 +31571,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1754] SQUASHED:
 [cycle 1755] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 100562f8)
@@ -31338,6 +31589,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1755] SQUASHED:
 [cycle 1756] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 100562fc)
@@ -31589,6 +31841,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1769] SQUASHED:
 [cycle 1770] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056310)
@@ -31606,6 +31859,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1770] SQUASHED:
 [cycle 1771] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056314)
@@ -31623,6 +31877,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1771] SQUASHED:
 [cycle 1772] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056318)
@@ -31640,6 +31895,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1772] SQUASHED:
 [cycle 1773] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005631c)
@@ -31891,6 +32147,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1786] SQUASHED:
 [cycle 1787] 
 IF1 :
 	STORE: (PC: 20a170)(sReg_a: 2)(sReg_b: 7)(addr: 10056330)
@@ -31908,6 +32165,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1787] SQUASHED:
 [cycle 1788] 
 IF1 :
 	STORE: (PC: 20a174)(sReg_a: 2)(sReg_b: 7)(addr: 10056334)
@@ -31925,6 +32183,7 @@ MEM2 :
 	SQUASHED:
 WB :
 	SQUASHED:
+[cycle 1788] SQUASHED:
 [cycle 1789] 
 IF1 :
 	STORE: (PC: 20a178)(sReg_a: 2)(sReg_b: 7)(addr: 10056338)
@@ -31942,6 +32201,7 @@ MEM2 :
 	NOP:
 WB :
 	SQUASHED:
+[cycle 1789] SQUASHED:
 [cycle 1790] 
 IF1 :
 	STORE: (PC: 20a17c)(sReg_a: 2)(sReg_b: 7)(addr: 1005633c)

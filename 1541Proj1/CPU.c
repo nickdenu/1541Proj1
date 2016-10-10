@@ -253,9 +253,14 @@ int main(int argc, char **argv)
           printf("[cycle %d] JRTYPE:",cycle_number) ;
           printf(" (PC: %x) (sReg_a: %d)(addr: %x)\n", tr_entry->PC, tr_entry->dReg, tr_entry->Addr);
           break;
+		case ti_SQUASHED:
+		  printf("[cycle %d] SQUASHED:\n",cycle_number);
       }
     }
 	
+	/////////////////////////
+	// DATA HAZARD CORRECTION
+	// //////////////////////
 	if((pipeline_array[s_WB]->dReg != REG_UNUSED && pipeline_array[s_ID]->sReg_a != REG_UNUSED)
 		|| (pipeline_array[s_EX1]->dReg == pipeline_array[s_ID]->sReg_a
 		|| pipeline_array[s_EX1]->dReg == pipeline_array[s_ID]->sReg_b)
@@ -269,6 +274,9 @@ int main(int argc, char **argv)
 		stalled = s_EX1;
 	}
 	
+	//////////////////////////////////////
+	// CONTROL HAZARD/BRANCHING CORRECTION
+	// ///////////////////////////////////
 	switch (prediction_method) {
 		case 0:
 			// Check if the instruction fetched after the branch is at the branch target. If so, you were wrong.
