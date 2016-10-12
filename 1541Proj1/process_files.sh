@@ -1,10 +1,11 @@
 #!/bin/bash
 
+outputfname="outputs/trace_output.txt"
+touch $outputfname
+: > $outputfname
+
 for btbsize in 32 64 128 
 	do
-		outputfname="outputs/btb${btbsize}.txt"
-		touch $outputfname
-		: > $outputfname
 		for trace in inputs/* 
 		do
 			fname=${trace##*/}
@@ -15,7 +16,8 @@ for btbsize in 32 64 128
 					echo "#######################################################################" >> $outputfname 
 					echo "File ${fname}" >> $outputfname
 		   		 	echo "Method ${p_method}" >> $outputfname
-					./pipeline"${btbsize}" $trace 0 $p_method >> $outputfname 
+					echo "BTB Size ${btbsize}" >> $outputfname
+					./pipeline $trace $p_method 0 $btbsize >> $outputfname 
 					echo "#######################################################################" >> $outputfname 
 					echo "#######################################################################" >> $outputfname 
 				done

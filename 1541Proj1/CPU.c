@@ -15,9 +15,7 @@
 #define PIPELINE_SIZE 8
 #define REG_UNUSED 255
 #define ADDR_UNUSED 0xFFFFFFFF
-#define BTB_SIZE 64 
 #define MASK_OFFSET 4
-#define MASK 0x3F
 
 // uncomment for verbose output
 // #define DEBUG
@@ -59,6 +57,7 @@ int main(int argc, char **argv)
   char *trace_file_name;
   int trace_view_on = 0;
   int prediction_method = 0;
+  int btb_size = 64;
   
   unsigned char t_type = 0;
   unsigned char t_sReg_a= 0;
@@ -77,8 +76,9 @@ int main(int argc, char **argv)
   }
     
   trace_file_name = argv[1];
-  if (argc >= 3) trace_view_on = atoi(argv[2]) ;
-  if (argc >= 4) prediction_method = atoi(argv[3]) ;
+  if (argc >= 3) prediction_method = atoi(argv[2]) ;
+  if (argc >= 4) trace_view_on = atoi(argv[3]) ;
+  if (argc >= 5) btb_size = atoi(argv[4]) ;
 
   fprintf(stdout, "\n ** opening file %s\n", trace_file_name);
 
@@ -99,11 +99,27 @@ int main(int argc, char **argv)
   // Branching variables
   int fetched_pc9to4; 
   int evaluated_pc9to4;
+  int mask;
+  switch (btb_size) {
+		case 32:
+			mask = 0x1F;
+			break;
+		case 64:
+			mask = 0x3F;
+			break;
+		case 128:
+			mask = 0x7F;
+			break;
+		default:
+			mask = 0x3F;
+			break;
+  }
+			   
   int *prediction = (int *)malloc(PIPELINE_SIZE * sizeof(int));
   int *prediction_correct = (int *)malloc(PIPELINE_SIZE * sizeof(int));
-  int *btb_PC = (int *)malloc(BTB_SIZE * (sizeof(int)));
-  int *btb_taken = (int *)malloc(BTB_SIZE * (sizeof(int)));
-  int *btb_prevmissed = (int *)malloc(BTB_SIZE * (sizeof(int)));
+  int *btb_PC = (int *)malloc(btb_size * (sizeof(int)));
+  int *btb_taken = (int *)malloc(btb_size * (sizeof(int)));
+  int *btb_prevmissed = (int *)malloc(btb_size * (sizeof(int)));
   
   while(1) {
 	if(squashed){
@@ -123,10 +139,9 @@ int main(int argc, char **argv)
 		pipeline_array[i]->PC = pipeline_array[i-1]->PC;
 		pipeline_array[i]->Addr = pipeline_array[i-1]->Addr;
 		// shift predictions and result as well
-		if (i <= s_EX2) { 
-			prediction[i] = prediction[i-1];
-			prediction_correct[i] = prediction_correct[i-1];
-	   	}
+		prediction[i] = prediction[i-1];
+		prediction_correct[i] = prediction_correct[i-1];
+	   	
 
 	}	
 	if(squashed){
@@ -316,7 +331,7 @@ int main(int argc, char **argv)
 		// 1-bit branch prediction
 		case 1:
 			// Check if branch instruction that entered pipeline is in table 
-			fetched_pc9to4 = (pipeline_array[s_IF1]->PC >> MASK_OFFSET) & MASK;
+			fetched_pc9to4 = (pipeline_array[s_IF1]->PC >> MASK_OFFSET) & mask;
 			if (pipeline_array[s_IF1]->type == ti_BRANCH && btb_PC[fetched_pc9to4] == pipeline_array[s_IF1]->PC) {
 				prediction[s_IF1] = btb_taken[fetched_pc9to4];
 			} else {
@@ -336,7 +351,7 @@ int main(int argc, char **argv)
 			}
 
 			// Evaluate branch at EX2
-			evaluated_pc9to4 = (pipeline_array[s_EX2]->PC >> MASK_OFFSET) & MASK;
+			evaluated_pc9to4 = (pipeline_array[s_EX2]->PC >> MASK_OFFSET) & mask;
 			if (pipeline_array[s_EX2]->type == ti_BRANCH) {
 				// fill new instruction in btb buffer, overwriting if necessary
 				btb_PC[evaluated_pc9to4] = pipeline_array[s_EX2]->PC;
@@ -354,7 +369,7 @@ int main(int argc, char **argv)
 		// 2-bit branch prediction
 		case 2:
 			// Check if branch instruction that entered pipeline is in table 
-			fetched_pc9to4 = (pipeline_array[s_IF1]->PC >> MASK_OFFSET) & MASK;
+			fetched_pc9to4 = (pipeline_array[s_IF1]->PC >> MASK_OFFSET) & mask;
 			if (pipeline_array[s_IF1]->type == ti_BRANCH && btb_PC[fetched_pc9to4] == pipeline_array[s_IF1]->PC) {
 				// copy last taken behavior
 				prediction[s_IF1] = btb_taken[fetched_pc9to4];
@@ -375,7 +390,7 @@ int main(int argc, char **argv)
 			}
 
 			// Evaluate branch at EX2
-			evaluated_pc9to4 = (pipeline_array[s_EX2]->PC >> MASK_OFFSET) & MASK;
+			evaluated_pc9to4 = (pipeline_array[s_EX2]->PC >> MASK_OFFSET) & mask;
 			if (pipeline_array[s_EX2]->type == ti_BRANCH) {
 				// different behavior depending on if instruction was already in buffer
 				if (btb_PC[evaluated_pc9to4] != pipeline_array[s_EX2]->PC) {
