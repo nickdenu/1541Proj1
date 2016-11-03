@@ -33,12 +33,12 @@ struct cache_t {
 };
 
 /**
- * log2
+ * ilog2
  *
  * params: num, which is 2 raised to a positive integer
  * returns: log2 of the number
  */
-int log2(int num) {
+int ilog2(int num) {
     int exponent = 0;
 
     // continue until 1 has been shifted to 0th position
@@ -78,11 +78,11 @@ cache_create(int size, int blocksize, int assoc, int latency)
 
     int words_per_block = blocksize / WORDSIZE_BYTES; 
 
-    int byte_offset = log2(WORDSIZE_BYTES);
-    int block_offset = log2(words_per_block);
+    int byte_offset = ilog2(WORDSIZE_BYTES);
+    int block_offset = ilog2(words_per_block);
     int block_index_offset = byte_offset + block_offset;
 
-    int block_index_size = log2(nsets);
+    int block_index_size = ilog2(nsets);
     int block_index_mask = ones(block_index_size);
 
     int tag_offset = block_index_size + block_offset + byte_offset;
@@ -107,7 +107,7 @@ cache_create(int size, int blocksize, int assoc, int latency)
 
 // TODO
 int cache_access(struct cache_t *cp, unsigned long address, 
-        char access_type, unsigned long long now, struct cache_t *next_cp)
+        char access_type, unsigned long long now, struct cache_t *next_cp, int mem_latency)
 {
     //
     // Based on address, determine the set to access in cp and examine the blocks
@@ -127,16 +127,20 @@ int cache_access(struct cache_t *cp, unsigned long address,
     int latency;
     int index, tag;
     int column;
-    int lru = -1;
+    int lru;
     unsigned long long lru_ts = ULONG_MAX;
     struct cache_blk_t *lru_block;
+
+    int evicted_address;
+    int evicted_block_was_dirty;
+
     struct cache_blk_t *ablock;
 
     index = (address >> cp->block_index_offset) && cp->block_index_mask;
-    tag = address >> tag_offset;
+    tag = address >> cp->tag_offset;
 
-    for (column = 0; column < c->assoc; column++) {
-        ablock = cp->blocks[index][column]; 
+    for (column = 0; column < cp->assoc; column++) {
+        ablock = &(cp->blocks[index][column]); 
 
         // check for match
         if (ablock->valid && ablock->tag == tag) {
@@ -157,12 +161,53 @@ int cache_access(struct cache_t *cp, unsigned long address,
         }
     }
 
-    // getting block from next level, evicting dirty block
-    if (lru_block->dirty) {
+    // generate address for evicted block
+    evicted_address = (lru_block->tag << cp->tag_offset) || (index << cp->block_index_offset);
+    evicted_block_was_dirty = lru_block->dirty;
 
+    // replace LRU
+    lru_block->tag = tag;
+    lru_block->valid = 1;
+    if (access_type == 'w') {
+        lru_block->dirty = 1;
+    } else if (access_type == 'r') {
+        lru_block->dirty = 0;
+    }
+    lru_block->ts = now;
 
-
-    return(cp->hit_latency);
+    // getting block from next level, evicting block
+    if (evicted_block_was_dirty) {
+        if (next_cp == NULL) {
+            // next level is memory
+            // return cost to access this level 
+            // + time to write back dirty block 
+            // + time to get block from memory
+            return cp->hit_latency
+                + mem_latency
+                + mem_latency;
+        } else {
+            // next level is L2 
+            // return cost to access this level
+            // + time to write back dirty block
+            // + time to get block from next level
+            return cp->hit_latency 
+                + cache_access(next_cp, evicted_address, 'w', now, NULL, mem_latency) 
+                + cache_access(next_cp, address, access_type, now, NULL, mem_latency);
+        }
+    } else {
+        // block is not dirty
+        if (next_cp == NULL) {
+            // next level is memory
+            // return cost to access this leve
+            // + time to get block from memory
+            return cp->hit_latency + mem_latency;
+        } else {
+            // next level is L2
+            // return cost to access this level
+            // + time to get block from next level
+            return cp->hit_latency + cache_access(next_cp, address, access_type, now, NULL, mem_latency);
+        }
+    }
 }
 
 

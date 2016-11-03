@@ -112,7 +112,7 @@ int main(int argc, char **argv)
                 };
                 accesses++;
                 read_accesses++;
-                cycle_number += cache_access(L1, tr_entry->Addr, 'r', cycle_number, nextL);
+                cycle_number += cache_access(L1, tr_entry->Addr, 'r', cycle_number, nextL, mem_latency);
                 break;
             case ti_STORE:
                 if (trace_view_on){
@@ -121,7 +121,7 @@ int main(int argc, char **argv)
                 };
                 accesses++;
                 write_accesses++;
-                cycle_number += cache_access(L1, tr_entry->Addr, 'w', cycle_number, nextL);
+                cycle_number += cache_access(L1, tr_entry->Addr, 'w', cycle_number, nextL, mem_latency);
                 break;
             case ti_BRANCH:
                 if (trace_view_on) {
