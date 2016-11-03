@@ -21,6 +21,7 @@ int main(int argc, char **argv)
     size_t size;
     char *trace_file_name;
     int trace_view_on = 0;
+    FILE * config_fd;
 
     unsigned char t_type = 0;
     unsigned char t_sReg_a= 0;
@@ -48,8 +49,8 @@ int main(int argc, char **argv)
     unsigned int L2_hit_latency;
     unsigned int mem_latency;
 	
-	config_fd = fopen(cache_config.txt, "r");
-	fscanf(config_fd,"%d %d %d %d %d %d %d", L1size, bsize, L1assoc, L2size, L2assoc, L2_hit_latency, mem_latency);
+	config_fd = fopen("cache_config.txt", "r");
+	fscanf(config_fd,"%u %u %u %u %u %u %u", &L1size, &bsize, &L1assoc, &L2size, &L2assoc, &L2_hit_latency, &mem_latency);
     // here you should extract the cache parameters from the command line (cache size, associativity, latency)
 
     fprintf(stdout, "\n ** opening file %s\n", trace_file_name);
@@ -77,6 +78,13 @@ int main(int argc, char **argv)
         if (!size) {       /* no more instructions (trace_items) to simulate */
             printf("+ Simulation terminates at cycle : %u\n", cycle_number);
             printf("+ Cache statistics \n");
+            printf("++ Accesses: %d\n", accesses);
+            printf("++ Read accesses: %d\n", read_accesses);
+            printf("++ Write accesses: %d\n", write_accesses);
+            printf("++ L1 hits: %d\n", L1hits);
+            printf("++ L1 misses: %d\n", L1misses);
+            printf("++ L2 hits: %d\n", L2hits);
+            printf("++ L2 misses: %d\n", L2misses);
             break;
         }
         else{              /* parse the next instruction to simulate */
@@ -115,7 +123,7 @@ int main(int argc, char **argv)
                 };
                 accesses++;
                 read_accesses++;
-                cycle_number += cache_access(L1, tr_entry->Addr, 'r', cycle_number, nextL, mem_latency);
+                cycle_number += cache_access(L1, tr_entry->Addr, 'r', cycle_number, nextL, 1, mem_latency, 0);
                 break;
             case ti_STORE:
                 if (trace_view_on){
@@ -124,7 +132,7 @@ int main(int argc, char **argv)
                 };
                 accesses++;
                 write_accesses++;
-                cycle_number += cache_access(L1, tr_entry->Addr, 'w', cycle_number, nextL, mem_latency);
+                cycle_number += cache_access(L1, tr_entry->Addr, 'w', cycle_number, nextL, 1, mem_latency, 0);
                 break;
             case ti_BRANCH:
                 if (trace_view_on) {

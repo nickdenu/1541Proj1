@@ -11,9 +11,7 @@ struct cache_blk_t {
     char valid;
     char dirty;
     unsigned long long ts;	//a timestamp that may be used to implement LRU replacement
-    // TODO
-    // To guarantee that L2 is inclusive of L1, you may need an additional flag 
-    // in L2 to indicate that the block is cached in L1
+    char inL1;
 };
 
 struct cache_t {
@@ -105,9 +103,35 @@ cache_create(int size, int blocksize, int assoc, int latency)
     return C;
 }
 
+/**
+ * update_not_in_L1
+ *
+ * Updates a cache entry in L2 to reflect that it was removed from L1
+ */
+void update_not_in_L1(struct cache_t *cp, unsigned long address) {
+    int index, tag;
+    int column;
+    struct cache_blk_t *ablock;
+
+    index = (address >> cp->block_index_offset) && cp->block_index_mask;
+    tag = address >> cp->tag_offset;
+
+    for (column = 0; column < cp->assoc; column++) {
+        ablock = &(cp->blocks[index][column]); 
+
+        // check for match
+        if (ablock->valid && ablock->tag == tag) {
+            ablock->inL1 = 0;
+            return;
+        }
+    }
+}
+
+
 // TODO
 int cache_access(struct cache_t *cp, unsigned long address, 
-        char access_type, unsigned long long now, struct cache_t *next_cp, int mem_latency)
+        char access_type, unsigned long long now, struct cache_t *next_cp,
+        int level, int mem_latency, int eviction)
 {
     //
     // Based on address, determine the set to access in cp and examine the blocks
@@ -123,7 +147,7 @@ int cache_access(struct cache_t *cp, unsigned long address,
     // It is recommended to start implementing and testing a system with only L1 (no L2). Then add the
     // complexity of an L2.
     // return(cp->hit_latency);
-
+    
     int latency;
     int index, tag;
     int column;
@@ -145,6 +169,11 @@ int cache_access(struct cache_t *cp, unsigned long address,
         // check for match
         if (ablock->valid && ablock->tag == tag) {
             // cache hit
+            if (!eviction) {
+                if (level == 1) L1hits++;
+                if (level == 2) L2hits++;  
+            }
+            
             if (access_type == 'w') {
                 ablock->dirty = 1;
             }
@@ -154,15 +183,27 @@ int cache_access(struct cache_t *cp, unsigned long address,
 
         // update LRU
         if (ablock->ts < lru_ts) {
-            // this block is now the least recently used block
-            lru = column;
-            lru_ts = ablock->ts;
-            lru_block = ablock;
+            // observe inclusivity property for L2
+            if (level != 2 || !ablock->inL1) {
+                // this block is now the least recently used block
+                lru = column;
+                lru_ts = ablock->ts;
+                lru_block = ablock;
+            }
         }
+    }
+
+    // if you made it this far, there was a miss
+    if (!eviction) {
+        if (level == 1) L1misses++;
+        if (level == 2) L2misses++;
     }
 
     // generate address for evicted block
     evicted_address = (lru_block->tag << cp->tag_offset) || (index << cp->block_index_offset);
+    if (next_cp != NULL) {
+        update_not_in_L1(next_cp, evicted_address);
+    }
     evicted_block_was_dirty = lru_block->dirty;
 
     // replace LRU
@@ -174,6 +215,7 @@ int cache_access(struct cache_t *cp, unsigned long address,
         lru_block->dirty = 0;
     }
     lru_block->ts = now;
+    lru_block->inL1 = 1;
 
     // getting block from next level, evicting block
     if (evicted_block_was_dirty) {
@@ -191,23 +233,21 @@ int cache_access(struct cache_t *cp, unsigned long address,
             // + time to write back dirty block
             // + time to get block from next level
             return cp->hit_latency 
-                + cache_access(next_cp, evicted_address, 'w', now, NULL, mem_latency) 
-                + cache_access(next_cp, address, access_type, now, NULL, mem_latency);
+                + cache_access(next_cp, evicted_address, 'w', now, NULL, level+1, mem_latency, 1) 
+                + cache_access(next_cp, address, access_type, now, NULL, level+1, mem_latency, 0);
         }
     } else {
         // block is not dirty
         if (next_cp == NULL) {
             // next level is memory
-            // return cost to access this leve
+            // return cost to access this level
             // + time to get block from memory
             return cp->hit_latency + mem_latency;
         } else {
             // next level is L2
             // return cost to access this level
             // + time to get block from next level
-            return cp->hit_latency + cache_access(next_cp, address, access_type, now, NULL, mem_latency);
+            return cp->hit_latency + cache_access(next_cp, address, access_type, now, NULL, level+1, mem_latency, 0);
         }
     }
 }
-
-
