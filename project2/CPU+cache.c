@@ -39,6 +39,7 @@ int main(int argc, char **argv)
 
     trace_file_name = argv[1];
     if (argc == 3) trace_view_on = atoi(argv[2]) ;
+    // TODO
     // here you should extract the cache parameters from the command line (cache size, associativity, latency)
     unsigned int L1size = 16; 
     unsigned int bsize = 32;
@@ -111,7 +112,7 @@ int main(int argc, char **argv)
                 };
                 accesses++;
                 read_accesses++;
-                cycle_number = cycle_number + cache_access(L1, tr_entry->Addr, 'r', cycle_number, nextL);
+                cycle_number += cache_access(L1, tr_entry->Addr, 'r', cycle_number, nextL);
                 break;
             case ti_STORE:
                 if (trace_view_on){
@@ -120,7 +121,7 @@ int main(int argc, char **argv)
                 };
                 accesses++;
                 write_accesses++;
-                cycle_number = cycle_number + cache_access(L1, tr_entry->Addr, 'w', cycle_number, nextL);
+                cycle_number += cache_access(L1, tr_entry->Addr, 'w', cycle_number, nextL);
                 break;
             case ti_BRANCH:
                 if (trace_view_on) {
