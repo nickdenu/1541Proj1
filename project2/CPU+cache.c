@@ -40,14 +40,17 @@ int main(int argc, char **argv)
     trace_file_name = argv[1];
     if (argc == 3) trace_view_on = atoi(argv[2]) ;
     // TODO
+    unsigned int L1size; 
+    unsigned int bsize;
+    unsigned int L1assoc;
+    unsigned int L2size;
+    unsigned int L2assoc;
+    unsigned int L2_hit_latency;
+    unsigned int mem_latency;
+	
+	config_fd = fopen(cache_config.txt, "r");
+	fscanf(config_fd,"%d %d %d %d %d %d %d", L1size, bsize, L1assoc, L2size, L2assoc, L2_hit_latency, mem_latency);
     // here you should extract the cache parameters from the command line (cache size, associativity, latency)
-    unsigned int L1size = 16; 
-    unsigned int bsize = 32;
-    unsigned int L1assoc = 4;
-    unsigned int L2size = 0;
-    unsigned int L2assoc = 0;
-    unsigned int L2_hit_latency = 6;
-    unsigned int mem_latency = 100;
 
     fprintf(stdout, "\n ** opening file %s\n", trace_file_name);
 
