@@ -162,7 +162,7 @@ int cache_access(struct cache_t *cp, unsigned long address,
     int evicted_block_was_dirty;
 
     struct cache_blk_t *ablock;
-    index = (address >> cp->block_index_offset) && cp->block_index_mask;
+    index = (address >> cp->block_index_offset) & cp->block_index_mask;
     tag = address >> cp->tag_offset;
 	#ifdef DEBUG
 		printf("******Accessing Cache*********\n");
