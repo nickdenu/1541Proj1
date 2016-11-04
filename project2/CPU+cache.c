@@ -51,7 +51,6 @@ int main(int argc, char **argv)
 	
 	config_fd = fopen("cache_config.txt", "r");
 	fscanf(config_fd,"%u %u %u %u %u %u %u", &L1size, &bsize, &L1assoc, &L2size, &L2assoc, &L2_hit_latency, &mem_latency);
-    // here you should extract the cache parameters from the command line (cache size, associativity, latency)
 
     fprintf(stdout, "\n ** opening file %s\n", trace_file_name);
 

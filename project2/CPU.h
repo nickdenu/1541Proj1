@@ -1,4 +1,4 @@
-
+#define DEBUG
 #ifndef TRACE_ITEM_H
 #define TRACE_ITEM_H
 
@@ -69,6 +69,7 @@ void trace_uninit()
 	fclose(trace_fd);
 }
 
+#ifdef DEBUG
 int trace_get_item(struct trace_item **item)
 {
 	int n_items;
@@ -91,3 +92,27 @@ int trace_get_item(struct trace_item **item)
 
 	return 1;
 }
+#else
+int trace_get_item(struct trace_item **item)
+{
+	int n_items;
+
+	if (trace_buf_ptr == trace_buf_end) {	/* if no more unprocessed items in the trace buffer, get new data  */
+		n_items = fread(trace_buf, sizeof(struct trace_item), TRACE_BUFSIZE, trace_fd);
+		if (!n_items) return 0;				/* if no more items in the file, we are done */
+
+		trace_buf_ptr = 0;
+		trace_buf_end = n_items;			/* n_items were read and placed in trace buffer */
+	}
+
+	*item = &trace_buf[trace_buf_ptr];	/* read a new trace item for processing */
+	trace_buf_ptr++;
+
+	if (is_big_endian()) {
+		(*item)->PC = my_ntohl((*item)->PC);
+		(*item)->Addr = my_ntohl((*item)->Addr);
+	}
+
+	return 1;
+}
+#endif
