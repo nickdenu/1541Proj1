@@ -1,6 +1,7 @@
 #define DEBUG
 #ifndef TRACE_ITEM_H
 #define TRACE_ITEM_H
+#include <string.h>
 
 // this is tpts
 enum trace_item_type {
@@ -52,6 +53,7 @@ uint32_t my_ntohl(uint32_t x)
 
 void trace_init()
 {
+	printf("trace_init\n");
 	trace_buf = malloc(sizeof(struct trace_item) * TRACE_BUFSIZE);
 
 	if (!trace_buf) {
@@ -73,22 +75,38 @@ void trace_uninit()
 int trace_get_item(struct trace_item **item)
 {
 	int n_items;
-
+	char *command = (char *)malloc(100);
+	unsigned int address = 0;
 	if (trace_buf_ptr == trace_buf_end) {	/* if no more unprocessed items in the trace buffer, get new data  */
-		n_items = fread(trace_buf, sizeof(struct trace_item), TRACE_BUFSIZE, trace_fd);
+		n_items = fscanf(trace_fd,"%s %u", command, &address);
 		if (!n_items) return 0;				/* if no more items in the file, we are done */
-
+		(*item) = (struct trace_item *)malloc(1000);
+		if(!strcmp(command, "STORE")) {
+			(*item)->type = ti_STORE;
+			(*item)->PC = 0;
+			(*item)->sReg_a = 0;
+			(*item)->sReg_b = 0;
+			(*item)->Addr = address;
+		}
+		else if(!strcmp(command, "LOAD")) {
+			(*item)->type = ti_LOAD;
+			(*item)->PC = 0;
+			(*item)->sReg_a = 0;
+			(*item)->sReg_b = 0;
+			(*item)->Addr = address;
+		}
+		else return 0;
 		trace_buf_ptr = 0;
 		trace_buf_end = n_items;			/* n_items were read and placed in trace buffer */
 	}
 
-	*item = &trace_buf[trace_buf_ptr];	/* read a new trace item for processing */
+	//*item = &trace_buf[trace_buf_ptr];	/* read a new trace item for processing */
 	trace_buf_ptr++;
 
-	if (is_big_endian()) {
+	/*if (is_big_endian()) {
 		(*item)->PC = my_ntohl((*item)->PC);
 		(*item)->Addr = my_ntohl((*item)->Addr);
-	}
+	}*/
 
 	return 1;
 }

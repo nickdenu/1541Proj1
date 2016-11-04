@@ -99,7 +99,10 @@ cache_create(int size, int blocksize, int assoc, int latency)
     for(i = 0; i < nsets; i++) {
         C->blocks[i] = (struct cache_blk_t *)calloc(assoc, sizeof(struct cache_blk_t));
     }
-
+	#ifdef DEBUG
+		printf("******Constructing Cache*********\n");
+		printf("nsets = %d\nassoc = %d\nblock_index_offset = %d\nblock_index_mask = %d\ntag_offset = %d\nhit_latency = %d\n",nsets, assoc, block_index_offset, block_index_mask, tag_offset, latency);
+	#endif
     return C;
 }
 
@@ -159,9 +162,13 @@ int cache_access(struct cache_t *cp, unsigned long address,
     int evicted_block_was_dirty;
 
     struct cache_blk_t *ablock;
-
     index = (address >> cp->block_index_offset) && cp->block_index_mask;
     tag = address >> cp->tag_offset;
+	#ifdef DEBUG
+		printf("******Accessing Cache*********\n");
+		printf("\n\naddress = %d\ncp->block_index_offset = %d\ncp->block_index_mask = %d\ncp->tag_offset = %d\nindex = %d\ntag = %d\n\n\n",address, cp->block_index_offset, cp->block_index_mask, cp->tag_offset, index, tag);
+	#endif
+	
 
     for (column = 0; column < cp->assoc; column++) {
         ablock = &(cp->blocks[index][column]); 
@@ -195,8 +202,18 @@ int cache_access(struct cache_t *cp, unsigned long address,
 
     // if you made it this far, there was a miss
     if (!eviction) {
-        if (level == 1) L1misses++;
-        if (level == 2) L2misses++;
+        if (level == 1) {
+			#ifdef DEBUG
+				printf("L1Miss");
+			#endif
+				L1misses++;
+		}
+        if (level == 2) {
+			L2misses++;
+			#ifdef DEBUG
+				printf("L2Miss");
+			#endif
+		}
     }
 
     // generate address for evicted block

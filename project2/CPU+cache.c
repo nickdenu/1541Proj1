@@ -61,6 +61,7 @@ int main(int argc, char **argv)
         exit(0);
     }
 
+	printf("tracing\n");
     trace_init();
     struct cache_t *L1, *L2, *nextL;
     L1 = cache_create(L1size, bsize, L1assoc, 0); 
