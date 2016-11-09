@@ -1,4 +1,4 @@
-#define DEBUG
+//#define DEBUG
 #ifndef TRACE_ITEM_H
 #define TRACE_ITEM_H
 #include <string.h>

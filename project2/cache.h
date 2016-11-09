@@ -166,7 +166,7 @@ int cache_access(struct cache_t *cp, unsigned long address,
     tag = address >> cp->tag_offset;
 	#ifdef DEBUG
 		printf("******Accessing Cache*********\n");
-		printf("\n\naddress = %d\ncp->block_index_offset = %d\ncp->block_index_mask = %d\ncp->tag_offset = %d\nindex = %d\ntag = %d\n\n\n",address, cp->block_index_offset, cp->block_index_mask, cp->tag_offset, index, tag);
+		printf("\n\naddress = %lu\ncp->block_index_offset = %d\ncp->block_index_mask = %d\ncp->tag_offset = %d\nindex = %d\ntag = %d\n\n\n",address, cp->block_index_offset, cp->block_index_mask, cp->tag_offset, index, tag);
 	#endif
 	
 
