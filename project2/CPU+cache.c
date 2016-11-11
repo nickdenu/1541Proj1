@@ -1,3 +1,7 @@
+// Project 2
+// Nick Denu and Stephen Snow
+// COE 1541
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <inttypes.h>
